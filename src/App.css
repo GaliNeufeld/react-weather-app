@@ -1,0 +1,27 @@
+body {
+    background-color: #8dc6ff;
+}
+.App .container {
+    background: linear-gradient(
+        181.2deg,
+        rgb(181, 239, 249) 10.5%,
+        rgb(254, 254, 254) 86.8%
+    );
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 60%;
+    padding-top: 30px;
+    margin: 80px auto;
+    font-family: "Supermercado One", cursive;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    color: #1c4b82;
+    box-shadow: rgb(37 39 89/10%) 0px 8px 8px 0;
+    border-radius: 10px;
+}
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}

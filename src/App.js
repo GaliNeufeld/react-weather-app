@@ -1,13 +1,14 @@
 import React from "react";
+import Weather from "./Weather";
 import './App.css';
 
 export default function App() {
   return (
     <div className="App">
       <div class="container">
-       
-      <h1>Hello from App</h1>
-      <footer>
+       <Weather />
+      
+      <footer className="text-center">
         This project was coded by{" "}
         <a href="mailto:galneufeld@gmail.com" target="_blank" rel="nonreferrer"> 
           Gali Neufeld
