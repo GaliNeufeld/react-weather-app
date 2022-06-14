@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Date from "./Date";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -7,18 +8,18 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false });
   
   function handleResponse(response) {
-    console.log(response.data);
+    
     setWeatherData({
       ready: true,
-      city: response.data.name,
-      country: response.data.sys.country,
-      date: "Wednesday June 15, 2022",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       feelsLike: response.data.main.feels_like,
+      city: response.data.name,
+      country: response.data.sys.country,
     });
    
   }
@@ -41,16 +42,18 @@ export default function Weather(props) {
             <button className="btn btn-success" id="current-location-button">
               My location 📍
             </button>
-
           </div>
-        </div> 
+        </div>
       </form>
-    
-      <br />
-      <h1>New York</h1>
-      <p className="date">Last updated on: Wednesday June 15, 2022</p>
 
       <br />
+      <h1>
+        {weatherData.city}, {weatherData.country}
+      </h1>
+      <h5>
+        <Date date={weatherData.date} />
+      </h5>
+
       <hr />
       <p className="description">Clear</p>
       <div className="row main">
@@ -98,7 +101,7 @@ export default function Weather(props) {
         </div>
       </div>
     </div>
-   );
+  );
    } else {
     const apiKey = "c5b46e313ac60a38d46e9623287e0a7d";
   
