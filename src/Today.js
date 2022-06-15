@@ -16,8 +16,8 @@ import "./Today.css";
 
     let date = props.date.getDate();
     return (
-    <div>
-        Last updated: {day},{" "}{month}{" "}{date}, {" "}{year}{" "}at{" "}{hours}
-     </div>
+    <div className="Today"> 
+        <h5>Last updated: {day},{" "}{month}{" "}{date}, {" "}{year}{" "}at{" "}{hours}</h5>
+    </div>
     );
  }
