@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Date from "./Date";
+import Today from "./Today";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -51,11 +51,11 @@ export default function Weather(props) {
         {weatherData.city}, {weatherData.country}
       </h1>
       <h5>
-        <Date date={weatherData.date} />
+        <Today date={weatherData.date} />
       </h5>
 
       <hr />
-      <p className="description">Clear</p>
+      <p className="description">{weatherData.description}</p>
       <div className="row main">
         <div className="col-6 now">
           <img
@@ -87,14 +87,14 @@ export default function Weather(props) {
           <div className="row-1">
             <div className="col">
               <span className="wind">
-                Wind: <strong>{weatherData.wind} m/ph</strong>
+                Wind: <strong>{Math.round(weatherData.wind)} m/ph</strong>
               </span>
             </div>
           </div>
           <div className="row-2">
             <div className="col">
               <span className="feelsLike" id="feelsLike">
-                Feels like: <strong>{weatherData.feelsLike}°F</strong>
+                Feels like: <strong>{Math.round(weatherData.feelsLike)}°F</strong>
               </span>
             </div>
           </div>
