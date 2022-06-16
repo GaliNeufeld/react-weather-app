@@ -1,27 +1,25 @@
 import React from "react";
 import Today from "./Today";
 import "./WeatherInfo.css";
+import WeatherIcon from "./WeatherIcon";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-
       <br />
       <h1>
         {props.info.city}, {props.info.country}
       </h1>
-      
-        <Today date={props.info.date} />
-      
+
+      <Today date={props.info.date} />
 
       <hr />
       <p className="description">{props.info.description}</p>
       <div className="row main">
         <div className="col-6 now">
-          <img
-            className="icon"
-            src={props.info.iconUrl}
-            alt={props.info.description}
-          />
+          <span className="icon">
+            <WeatherIcon icon={props.info.iconCode} />
+          </span>
+
           <span className="temperature" id="temperature">
             {" "}
             {Math.round(props.info.temperature)}°F{" "}
@@ -53,12 +51,13 @@ export default function WeatherInfo(props) {
           <div className="row-2">
             <div className="col">
               <span className="feelsLike" id="feelsLike">
-                Feels like: <strong>{Math.round(props.info.feelsLike)}°F</strong>
+                Feels like:{" "}
+                <strong>{Math.round(props.info.feelsLike)}°F</strong>
               </span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    );
+  );
 }

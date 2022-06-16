@@ -4,6 +4,7 @@
   background: transparent;
   border: 2px solid #8dc6ff;
   margin-left: 30px;
+  border-radius: 20px;
 }
 .btn {
   background: #8dc6ff;
@@ -12,6 +13,7 @@
   transition: all 200ms ease;
   box-shadow: rgb(37 39 89 / 8%);
   margin-left: 30px;
+  border-radius: 20px;
 }
 .btn:hover {
   color: #8dc6ff;
@@ -71,11 +73,7 @@
 #temperature {
   font-size: 50px;
 }
-.icon {
-  position: relative;
-  top: -5px;
-  left: -10px;
-}
+
 
 #fahrenheit-link,
 #celsius-link {
