@@ -6,13 +6,13 @@ export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <br />
-      <h1>
+      <h1 className="text-center">
         {props.info.city}, {props.info.country}
       </h1>
 
       <Today date={props.info.date} />
 
-      <hr />
+      <hr/>
       <p className="description">{props.info.description}</p>
       <div className="row main">
         <div className="col-6 now">
