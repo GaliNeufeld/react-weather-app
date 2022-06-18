@@ -16,15 +16,16 @@ export default function WeatherInfo(props) {
 
       <hr/>
       <p className="description">{props.info.description}</p>
+      
+
       <div className="row main">
         <div className="col-6 now">
           <span className="icon">
-            <WeatherIcon icon={props.info.iconCode} />
+            <WeatherIcon icon={props.info.iconCode} size={52}/>
           </span>
 
           <TemperatureSection fahrenheit={props.info.temperature}/>
-         
-
+        
         </div>
         {""}
         <div className="col-6 values">
@@ -49,6 +50,9 @@ export default function WeatherInfo(props) {
           </div>
         </div>
       </div>
+    
+
+    
     </div>
   );
 }

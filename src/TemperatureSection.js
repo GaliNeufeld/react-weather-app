@@ -25,8 +25,11 @@ export default function TemperatureSection (props){
             <a href="/" onClick={showCelsius} id="celsius-link">
               C°
             </a>{" "}
-            |<span classNmae="active"> F</span>
+            |<span className="active"> F</span>
           </span>
+
+
+          
         </span>
       );
      } else {
@@ -49,6 +52,10 @@ export default function TemperatureSection (props){
               <a href="/" id="fahrenheit-link" className="active"></a>
             </span>
           </span>
-        );
+       
+       
+       
+       );
      }
     } 
+
