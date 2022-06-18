@@ -41,6 +41,7 @@ export default function Weather(props) {
       feelsLike: response.data.main.feels_like,
       city: response.data.name,
       country: response.data.sys.country,
+      coordinates: response.data.coord
     });
 
    
@@ -68,7 +69,7 @@ export default function Weather(props) {
         </div>
       </form>
       <WeatherInfo info={weatherData} />
-      <Forecast />
+      <Forecast coordinates={weatherData.coordinates}/>
     </div>
   );
    } else {
