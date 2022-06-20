@@ -13,7 +13,7 @@ export default function App() {
           <a
             href="mailto:galneufeld@gmail.com"
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
           >
             Gali Neufeld
           </a>{" "}
@@ -21,7 +21,7 @@ export default function App() {
           <a
             href="https://github.com/GaliNeufeld/react-weather-app"
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
           >
             open sourced on GitHub
           </a>

@@ -21,15 +21,15 @@ export default function TemperatureSection (props){
             {Math.round(props.fahrenheit)}
           </span>
           °F{" "}
-          <span className="units">
+          <span className="units">°
             <a href="/" onClick={showCelsius} id="celsius-link">
-              C°
+              C
             </a>{" "}
-            |<span className="active"> F</span>
+            |<span className="active"> °F</span>
           </span>
 
 
-          
+
         </span>
       );
      } else {
@@ -38,24 +38,17 @@ export default function TemperatureSection (props){
           <span className="TemperatureSection">
             <span className="temperature" id="temperature">
               {" "}
-              {Math.round(celsius)}C°{" "}
+              {Math.round(celsius)}°C{" "}
             </span>
             <span className="units">
-              <span className="active">C°</span> |{" "}
-              <a
-                href="/"
-                onClick={showFahrenheit}
-                id="fahrenheit-link"
-              >
-                F°
-              </a>{" "}
-              <a href="/" id="fahrenheit-link" className="active"></a>
+              <span className="active">°C |{" "}°</span>
+               <a href="/" onClick={showFahrenheit} id="fahrenheit-link">
+                F
+               </a>
+              
             </span>
           </span>
-       
-       
-       
-       );
+        );
      }
     } 
 

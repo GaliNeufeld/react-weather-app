@@ -7,9 +7,8 @@ import "./Weather.css";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ready: false });
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  
+  
 
   function updateCity(event) {
     setCity(event.target.value);
