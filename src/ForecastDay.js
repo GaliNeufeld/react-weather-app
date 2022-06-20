@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 export default function ForecastDay(props) {
+
     function maxTemperature() {
         let temperature = Math.round(props.data.temp.max);
         return `${temperature}°`
@@ -25,7 +26,7 @@ export default function ForecastDay(props) {
         <WeatherIcon icon={props.data.weather[0].icon} size={36} />
         <div className="Forecast-temperatures">
           <span className="Forecast-temperature-min text-black-50">
-            {minTemperature()} -
+            {minTemperature()} -{" "}
           </span>
           <span className="Forecast-temperature-max">
             {maxTemperature()}
