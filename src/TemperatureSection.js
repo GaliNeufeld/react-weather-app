@@ -16,13 +16,13 @@ export default function TemperatureSection (props){
      if (unit === "fahrenheit") {
       return (
         <span className="TemperatureSection">
-          <span className="temperature" id="temperature">
+          <span className="temperature">
             {" "}
             {Math.round(props.fahrenheit)}
           </span>
           °F{" "}
           <span className="units">°
-            <a href="/" onClick={showCelsius} id="celsius-link">
+            <a href="/" onClick={showCelsius}>
               C
             </a>{" "}
             |<span className="active"> °F</span>
@@ -36,13 +36,13 @@ export default function TemperatureSection (props){
         let celsius = (props.fahrenheit - 32) / 1.8;
         return (
           <span className="TemperatureSection">
-            <span className="temperature" id="temperature">
+            <span className="temperature">
               {" "}
               {Math.round(celsius)}°C{" "}
             </span>
             <span className="units">
               <span className="active">°C |{" "}°</span>
-               <a href="/" onClick={showFahrenheit} id="fahrenheit-link">
+               <a href="/" onClick={showFahrenheit}>
                 F
                </a>
               

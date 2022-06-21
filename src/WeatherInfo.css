@@ -1,7 +1,11 @@
-h1 {
-    padding-left: 0px !important;
-}
 
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  padding-left: 30px !important;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 .icon {
   position: relative;
   top: 13px;

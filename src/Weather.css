@@ -11,19 +11,15 @@
   color: #1c4b82;
   border: none;
   transition: all 200ms ease;
-  box-shadow: rgb(37 39 89 / 8%);
-  margin-left: 30px;
+  
+  margin-left: 100px;
+  padding: 8px 35px;
   border-radius: 20px;
 }
 .btn:hover {
   color: #8dc6ff;
   background: whitesmoke;
   border: none;
-}
-
-#current-location-button {
-  width: 40%;
-  margin-left: 40px;
 }
 
 .description {
@@ -34,9 +30,7 @@
 }
 
 .main {
-  margin-bottom: 80px;
   font-size: 18px;
-  text-align: center;
 }
 
 .main .active {
@@ -61,22 +55,22 @@
   font-size: 24px;
 }
 
-#fahrenheit-link:hover,
-#celsius-link:hover {
+
+.units a:hover {
   text-decoration: underline;
 }
 
-#fahrenheit-link.active:hover,
-#celsius-link.active:hover {
+
+.active:hover {
   text-decoration: none;
 }
-#temperature {
+.temperature {
   font-size: 50px;
 }
 
 
-#fahrenheit-link,
-#celsius-link {
+
+.units a {
   font-size: 20px;
   text-decoration: none;
 }
