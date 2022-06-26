@@ -2,13 +2,13 @@
 
 .form-control {
   background: transparent;
-  border: 2px solid #8dc6ff;
+  border: 2px solid #006e7f;
   margin-left: 30px;
   border-radius: 20px;
 }
 .btn {
-  background: #8dc6ff;
-  color: #1c4b82;
+  background: #006e7f;
+  color: #ffee63;
   border: none;
   transition: all 200ms ease;
   
@@ -17,8 +17,8 @@
   border-radius: 20px;
 }
 .btn:hover {
-  color: #8dc6ff;
-  background: whitesmoke;
+  color: #006e7f;
+  background: #FD5D5D;
   border: none;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .main .active {
-  color: #1c4b82;
+  color: #006e7f;
   cursor: default;
 }
 

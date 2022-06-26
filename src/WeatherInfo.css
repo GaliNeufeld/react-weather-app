@@ -5,9 +5,10 @@ h1 {
   padding-left: 30px !important;
   padding-top: 20px;
   padding-bottom: 10px;
+  color: #FD5D5D;
 }
 .icon {
   position: relative;
-  top: 13px;
+  top: 11px;
   left: -15px;
 }
