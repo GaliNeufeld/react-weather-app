@@ -18,7 +18,7 @@ export default function TemperatureSection (props){
         <span className="TemperatureSection">
           <span className="temperature">
             {" "}
-            {Math.round(props.fahrenheit)}°F{" "}
+            {Math.round(props.fahrenheit)}°{" "}
           </span>
 
           <span className="units">
@@ -36,7 +36,7 @@ export default function TemperatureSection (props){
           <span className="TemperatureSection">
             <span className="temperature">
               {" "}
-              {Math.round(celsius)}°C{" "}
+              {Math.round(celsius)}°{" "}
             </span>
             <span className="units">
               <span className="active">°C |{" "}°</span>

@@ -84,6 +84,7 @@
   }
   .btn {
     margin: 0 auto;
+    padding: 5px 15px;
   }
   .date {
     margin-right: 10px;
@@ -96,10 +97,22 @@
   .description {
    padding-left: 0px;
    text-align: center;
+   font-size: 20px;
+  
   }
   .icon {
     display: none;
   }
-  
+  .temperature {
+    font-size: 28px;
+  }
+  .values {
+    font-size: 18px;
+    padding-right: 0px;
+  }
+  .units,
+  .units a {
+    font-size: 14px;
+  }
   
 }

@@ -18,8 +18,8 @@ export default function WeatherInfo(props) {
       <p className="description">{props.info.description}</p>
       
 
-      <div className="row main text-center mb-5">
-        <div className="col-6 now">
+      <div className="row main text-center sm-mb-5">
+        <div className="col-sm-6 now">
           <span className="icon">
             <WeatherIcon icon={props.info.iconCode} size={52}/>
           </span>
@@ -28,7 +28,7 @@ export default function WeatherInfo(props) {
         
         </div>
         {""}
-        <div className="col-6 values">
+        <div className="col-sm-6 values">
           <span className="humidity">
             {" "}
             Humidity: <strong>{props.info.humidity}% </strong>
