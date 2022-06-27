@@ -18,18 +18,16 @@ export default function TemperatureSection (props){
         <span className="TemperatureSection">
           <span className="temperature">
             {" "}
-            {Math.round(props.fahrenheit)}
+            {Math.round(props.fahrenheit)}°F{" "}
           </span>
-          °F{" "}
-          <span className="units">°
+
+          <span className="units">
+            °
             <a href="/" onClick={showCelsius}>
               C
             </a>{" "}
             |<span className="active"> °F</span>
           </span>
-
-
-
         </span>
       );
      } else {

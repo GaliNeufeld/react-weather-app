@@ -16,7 +16,7 @@ import "./Today.css";
 
     let date = props.date.getDate();
     return (
-      <p className="text-center">
+      <p className="text-center date">
         Last updated: {day}, {month} {date}, {year} at {hours}
       </p>
     );
