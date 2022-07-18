@@ -31,3 +31,8 @@
     padding: 5px 15px;
   } 
 }
+@media (min-height: 1000px) {
+  .Weather {
+    margin-top: 60px;
+  }
+}
