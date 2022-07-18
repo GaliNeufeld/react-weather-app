@@ -1,0 +1,30 @@
+.temperature {
+  font-size: 50px;
+}
+
+
+.units {
+  font-size: 20px;
+}
+
+.units a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.units a:hover {
+  text-decoration: underline;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+@media (max-width: 576px) {
+.temperature {
+    font-size: 28px;
+  }
+.units,
+.units a {
+    font-size: 14px;
+  }
+}

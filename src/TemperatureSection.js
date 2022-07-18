@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TemperatureSection.css";
 
 
 export default function TemperatureSection (props){

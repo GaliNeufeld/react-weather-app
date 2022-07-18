@@ -2,13 +2,13 @@
 
 .form-control {
   background: transparent;
-  border: 2px solid #006e7f;
+  border: 2px solid navy;
   margin-left: 30px;
   border-radius: 20px;
 }
 .btn {
-  background: #006e7f;
-  color: #ffee63;
+  background: navy;
+  color: pink;
   border: none;
   transition: all 200ms ease;
   
@@ -17,102 +17,17 @@
   border-radius: 20px;
 }
 .btn:hover {
-  color: #006e7f;
-  background: #FD5D5D;
+  color: navy;
+  background: #ca4e79;
   border: none;
 }
-
-.description {
-  font-size: 25px;
-  font-weight: bold;
-  padding-left: 30px;
-  text-transform: capitalize;
-}
-
-.main {
-  font-size: 18px;
-}
-
-.main .active {
-  color: #006e7f;
-  cursor: default;
-}
-
-.main .active:hover {
-  text-decoration: none;
-}
-.now {
-  text-align: center;
-  font-weight: 600;
-}
-.units {
-  font-size: 20px;
-}
-
-.values {
-  padding-right: 100px;
-  font-size: 24px;
-}
-
-
-.units a:hover {
-  text-decoration: underline;
-}
-
-
-.active:hover {
-  text-decoration: none;
-}
-.temperature {
-  font-size: 50px;
-}
-
-.units a {
-  font-size: 20px;
-  text-decoration: none;
-}
-
 @media (max-width: 576px) {
   .form-control {
     margin-left: 0px;
   }
-  h1 {
-    font-size: 28px;
-    padding-left: 0px !important;
-    
-  }
+  
   .btn {
     margin: 0 auto;
     padding: 5px 15px;
-  }
-  .date {
-    margin-right: 10px;
-    margin-left: 10px;
-
-  }
-  br {
-    display: none;
-  }
-  .description {
-   padding-left: 0px;
-   text-align: center;
-   font-size: 20px;
-  
-  }
-  .icon {
-    display: none;
-  }
-  .temperature {
-    font-size: 28px;
-  }
-  
-  .values {
-    font-size: 18px;
-    padding-right: 0px;
-  }
-  .units,
-  .units a {
-    font-size: 14px;
-  }
-  
+  } 
 }
