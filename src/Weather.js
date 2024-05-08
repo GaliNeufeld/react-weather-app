@@ -5,15 +5,12 @@ import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState(props.defaultCity);
-  const [weatherData, setWeatherData] = useState({ready: false });
-  
-  
+  const [city, setCity] = useState(props.defaultCity.replace(" ", "-"));
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function updateCity(event) {
     setCity(event.target.value);
   }
-
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -21,57 +18,56 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "c5b46e313ac60a38d46e9623287e0a7d";
+    const apiKey = "303b041t9dc7c1ce08f4ao48696a7fa8";
+    // const apiKey = "c5b46e313ac60a38d46e9623287e0a7d";
 
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(handleResponse);
+    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+    https: axios.get(apiUrl).then(handleResponse);
   }
 
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      date: new Date(response.data.dt * 1000),
-      temperature: response.data.main.temp,
-      iconCode: response.data.weather[0].icon,
-      description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
+      date: new Date(response.data.time * 1000),
+      temperature: response.data.temperature.current,
+      iconUrl: response.data.condition.icon_url,
+      description: response.data.condition.description,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      feelsLike: response.data.main.feels_like,
-      city: response.data.name,
-      country: response.data.sys.country,
-      coordinates: response.data.coord
+      feelsLike: response.data.temperature.feels_like,
+      city: response.data.city.replace(" County", ""),
+      country: response.data.country.replace("United States of America", "USA"),
+      coordinates: response.data.coordinates,
     });
-
-   
   }
-  if(weatherData.ready) {
-
-  return (
-    <div className="Weather">
-      <form onSubmit={handleSubmit} id="search-form">
-        <div className="row">
-          <div className="col-sm-6">
-            <input
-              onChange={updateCity}
-              type="search"
-              id="city-input"
-              className="form-control shadow-sm"
-              placeholder="Enter city name..."
-            />
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form onSubmit={handleSubmit} id="search-form">
+          <div className="row">
+            <div className="col-sm-6">
+              <input
+                onChange={updateCity}
+                type="search"
+                id="city-input"
+                className="form-control shadow-sm"
+                placeholder="Enter city name..."
+              />
+            </div>
+            <div className="col-sm-6">
+              <input type="submit" className="btn btn-warning" value="Search" />
+            </div>
           </div>
-          <div className="col-sm-6">
-            <input type="submit" className="btn btn-warning" value="Search" />
-          </div>
-        </div>
-      </form>
-      <WeatherInfo info={weatherData} />
-      <Forecast coordinates={weatherData.coordinates} />
-    </div>
-  );
-   } else {
+        </form>
+        <WeatherInfo info={weatherData} />
+        <Forecast coordinates={weatherData.coordinates} />
+      </div>
+    );
+  } else {
     search();
 
-     return "Loading...";
-   }
+    return "Loading...";
+  }
 }

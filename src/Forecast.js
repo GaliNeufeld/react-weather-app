@@ -5,56 +5,49 @@ import "./Forecast.css";
 import axios from "axios";
 
 export default function Forecast(props) {
-    let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState(null);
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
 
-    useEffect(() => {
-    setLoaded(false);       
-    },[props.coordinates]);
-    
-    function handleResponse(response) {
-        console.log(response.data);
-        setForecast(response.data.daily);
-        setLoaded(true);
-    }
-    console.log(props);
-    
-     function load() {
-        let apiKey = "c5b46e313ac60a38d46e9623287e0a7d";
-        let latitude = props.coordinates.lat;
-        let longitude = props.coordinates.lon;
-        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
-        axios.get(apiUrl).then(handleResponse);
+  function handleResponse(response) {
+    console.log(response.data);
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
+  console.log(props);
 
-     }
+  function load() {
+    let apiKey = "303b041t9dc7c1ce08f4ao48696a7fa8";
+    let latitude = props.coordinates.latitude;
+    let longitude = props.coordinates.longitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
 
-    if (loaded) {
-        console.log(forecast);   
-        return (
+    axios.get(apiUrl).then(handleResponse);
+  }
 
+  if (loaded) {
+    console.log(forecast);
+    return (
       <div className="Forecast">
-        <div className="row"> 
-        {forecast.map(function(dailyForecast, index) {
-            if (index < 5) { 
-            return (
-            <div className="col-sm days" key={index}>
-            
-            <ForecastDay data={dailyForecast} />
-         </div> 
-            );
-          } else {
-            return null;
-          }
-        })}
-          
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col-sm days" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
-      </div> 
-        );
-      
-    } else {
-
-    load();  
-    }      
- }
-
+      </div>
+    );
+  } else {
+    load();
+  }
+}
