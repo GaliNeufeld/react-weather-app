@@ -14,18 +14,16 @@ export default function WeatherInfo(props) {
 
       <Today date={props.info.date} />
 
-      <hr/>
+      <hr />
       <p className="description">{props.info.description}</p>
-      
 
       <div className="row main text-center sm-mb-5">
         <div className="col-sm-6 now">
           <span className="icon">
-            <WeatherIcon icon={props.info.iconCode} size={52}/>
+            <WeatherIcon iconImg={props.info.iconImg} iconDesc={props.info.iconDesc} />
           </span>
 
-          <TemperatureSection fahrenheit={props.info.temperature}/>
-        
+          <TemperatureSection fahrenheit={props.info.temperature} />
         </div>
         {""}
         <div className="col-sm-6 values">
@@ -50,9 +48,6 @@ export default function WeatherInfo(props) {
           </div>
         </div>
       </div>
-    
-
-    
     </div>
   );
 }
