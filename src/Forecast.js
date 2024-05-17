@@ -30,6 +30,7 @@ export default function Forecast(props) {
   if (loaded) {
     console.log(forecast);
     return (
+    
       <div className="Forecast">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {

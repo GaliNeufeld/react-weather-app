@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Today from "./Today";
 import "./WeatherInfo.css";
 import WeatherIcon from "./WeatherIcon";
-import TemperatureSection from "./TemperatureSection";
+import WeatherConditions from "./WeatherConditions";
 
 export default function WeatherInfo(props) {
+
+  const [unit, setUnit] = useState("fahrenheit");
+  const [wind, setWind] = useState(props.info.wind);
+  const [feelsLike, setFeelsLike] = useState(props.info.feelsLike);
+
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
+    setWind(wind * 1.609);
+    setFeelsLike((feelsLike - 32) / 1.8);
+  }
+
+  function showFahrenheit(event) {
+    event.preventDefault();
+     setUnit("fahrenheit");
+    setWind(props.info.wind);
+    setFeelsLike(props.info.feelsLike);
+  }
   return (
     <div className="WeatherInfo">
       <br />
@@ -20,33 +38,47 @@ export default function WeatherInfo(props) {
       <div className="row main text-center sm-mb-5">
         <div className="col-sm-6 now">
           <span className="icon">
-            <WeatherIcon iconImg={props.info.iconImg} iconDesc={props.info.iconDesc} />
+            <WeatherIcon
+              iconImg={props.info.iconImg}
+              iconDesc={props.info.iconDesc}
+            />
           </span>
+          {unit === "fahrenheit" ? (
+            <span className="TemperatureSection">
+              <span className="temperature">
+                {Math.round(props.info.temperature)}°F{" "}
+              </span>
 
-          <TemperatureSection fahrenheit={props.info.temperature} />
+              <span className="units">
+                °
+                <a href="/" onClick={showCelsius}>
+                  C
+                </a>{" "}
+                |<span className="active"> °F</span>
+              </span>
+            </span>
+          ) : (
+            <span className="TemperatureSection">
+              <span className="temperature">
+                {Math.round((props.info.temperature - 32) / 1.8)}°C{" "}
+              </span>
+              <span className="units">
+                <span className="active">°C | °</span>
+                <a href="/" onClick={showFahrenheit}>
+                  F
+                </a>
+              </span>
+            </span>
+          )}
         </div>
         {""}
-        <div className="col-sm-6 values">
-          <span className="humidity">
-            {" "}
-            Humidity: <strong>{props.info.humidity}% </strong>
-          </span>
-          <div className="row-1">
-            <div className="col">
-              <span className="wind">
-                Wind: <strong>{Math.round(props.info.wind)} m/ph</strong>
-              </span>
-            </div>
-          </div>
-          <div className="row-2">
-            <div className="col">
-              <span className="feelsLike">
-                Feels like:{" "}
-                <strong>{Math.round(props.info.feelsLike)}°F</strong>
-              </span>
-            </div>
-          </div>
-        </div>
+        <WeatherConditions
+          wind={wind}
+          windUnit={unit === "fahrenheit" ? " m/ph" : " km/h"}
+          feelsLike={feelsLike}
+          feelsLikeUnit={unit === "fahrenheit" ? " °F" : " °C"}
+          humidity={props.info.humidity}
+        />
       </div>
     </div>
   );
